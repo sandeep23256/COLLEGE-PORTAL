@@ -3,16 +3,20 @@ const mongoose =require('mongoose')
 const UserSchema =mongoose.Schema({
     name:{
         type:String,
-        require
+       required:true
     },
     email:{
         type:String,
-        require
+       required:true
     },
     password:{
         type:String,
-        require
-    }
-})
+        required:true
+    },
+    role:{
+        type:String,
+        default:"student"
+    },
+},{timestamps:true})
 const UserModel =mongoose.model('user',UserSchema)
 module.exports = UserModel
